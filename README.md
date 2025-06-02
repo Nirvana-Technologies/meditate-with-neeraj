@@ -1,3 +1,1 @@
 # meditate-with-neeraj
-
-# First
