@@ -1,51 +1,20 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
-  <a class="navbar-brand" href="#">
-    <img src="assets/logo.svg" alt="Logo" width="200" />
-  </a>
-
-  <!-- Hamburger Icon for mobile -->
-  <button class="d-lg-none btn" (click)="toggleSidebar()">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <mask id="mask0_1_448" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
-        <path d="M24 0H0V24H24V0Z" fill="white" />
-      </mask>
-      <g mask="url(#mask0_1_448)">
-        <path
-          d="M4 18H20C20.55 18 21 17.55 21 17C21 16.45 20.55 16 20 16H4C3.45 16 3 16.45 3 17C3 17.55 3.45 18 4 18ZM4 13H20C20.55 13 21 12.55 21 12C21 11.45 20.55 11 20 11H4C3.45 11 3 11.45 3 12C3 12.55 3.45 13 4 13ZM3 7C3 7.55 3.45 8 4 8H20C20.55 8 21 7.55 21 7C21 6.45 20.55 6 20 6H4C3.45 6 3 6.45 3 7Z"
-          fill="url(#paint0_linear_1_448)" />
-      </g>
-      <defs>
-        <linearGradient id="paint0_linear_1_448" x1="3.47765" y1="8.34783" x2="12.9882" y2="9.2414"
-          gradientUnits="userSpaceOnUse">
-          <stop stop-color="#2B5371" />
-          <stop offset="1" stop-color="#3F7AA6" />
-        </linearGradient>
-      </defs>
-    </svg>
-  </button>
-
-  <!-- Desktop Nav Links -->
-  <div class="collapse navbar-collapse justify-content-end d-none d-lg-flex">
-    <ul class="navbar-nav">
+<header>
+  <nav class="navbar section-content">
+    <a href="#" class="nav-logo">
+      <h2 class="logo-text">
+        <img src="assets/logo.svg">
+      </h2>
+    </a>
+    <ul class="nav-menu">
       <li class="nav-item">
-        <a class="nav-link" href="#">Home</a>
+        <a href="#" class="nav-link">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
+        <a href="#" class="nav-link">About Us</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Contact</a>
+        <a href="#" class="nav-link">Contact Us</a>
       </li>
     </ul>
-  </div>
-</nav>
-
-<!-- Sidebar -->
-<div class="mobile-sidebar" [class.open]="isSidebarOpen" (click)="closeSidebar()">
-  <div class="sidebar-content" (click)="$event.stopPropagation()">
-    <button class="close-btn btn btn-link text-end" (click)="closeSidebar()">✕</button>
-    <a class="nav-link" href="#">Home</a>
-    <a class="nav-link" href="#">About</a>
-    <a class="nav-link" href="#">Contact</a>
-  </div>
-</div>
+  </nav>
+</header>

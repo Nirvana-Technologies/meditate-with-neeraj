@@ -1,26 +1,32 @@
-.mobile-sidebar {
-  position: fixed;
-  top: 0;
-  right: -250px;
-  width: 250px;
-  height: 100%;
-  background-color: white;
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-  z-index: 1050;
-  transition: right 0.3s ease;
-}
+@use "../../../../partials/colors" as *;
 
-.mobile-sidebar.open {
-  right: 0;
-}
-
-.sidebar-content {
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-}
-
-.close-btn {
-  align-self: flex-end;
-  font-size: 1.5rem;
+header {
+  background: $background;
+  .section-content {
+    margin: 0 auto;
+    padding: 0 2rem;
+    max-width: 130rem;
+  }
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.6rem;
+    .nav-menu {
+      display: flex;
+      gap: 1rem;
+      .nav-item {
+        color: $black;
+      }
+      .nav-link {
+        padding: 0.4rem;
+        border-radius: 0.7rem;
+        transition: 0.3s ease;
+        &:hover {
+          color: $white;
+          background: $primary;
+        }
+      }
+    }
+  }
 }
