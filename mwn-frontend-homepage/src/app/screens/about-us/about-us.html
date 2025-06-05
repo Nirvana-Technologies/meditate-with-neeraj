@@ -1,42 +1,21 @@
 <div
-  class="relative min-h-screen md:min-h-auto xl:min-h-screen bg-[#F6FFF5] text-base flex flex-col md:grid md:grid-cols-2 md:place-items-center md:gap-x-11 p-5 md:!p-10"
->
-  <div
-    class="banner-image border-4 border-black overflow-hidden flex items-center justify-center mb-4 md:mb-0"
-  >
+  class="relative min-h-screen md:min-h-auto xl:min-h-screen bg-[#F6FFF5] text-base flex flex-col md:grid md:grid-cols-2 md:place-items-center md:gap-x-11 p-5 md:!p-10">
+  <div class="banner-image border-4 border-black overflow-hidden flex items-center justify-center mb-4 md:mb-0">
     <picture>
       <source srcset="/assets/neerajImage.svg" media="(max-width: 640px)" />
-      <img
-        src="/assets/neerajImage.svg"
-        alt="Profile background"
-        class="h-full object-contain"
-      />
+      <img src="/assets/neerajImage.svg" alt="Profile background" class="h-full object-contain" />
     </picture>
   </div>
 
-  <div
-    class="flex flex-col items-start justify-center md:max-w-3xl lg:max-w-5xl xl:max-w-[85rem]"
-  >
-    <div
-      class="flex flex-wrap items-end justify-center md:justify-start mb-4 text-3xl sm:text-4xl"
-    >
-      <img
-        src="../../../assets/namasteEmoji.svg"
-        alt="namasteEmoji"
-        class="w-10"
-      />
+  <div class="flex flex-col items-start justify-center md:max-w-3xl lg:max-w-5xl xl:max-w-[85rem]">
+    <div class="flex flex-wrap items-end justify-center md:justify-start mb-4 text-3xl sm:text-4xl">
+      <img src="../../../assets/namasteEmoji.svg" alt="namasteEmoji" class="w-10" />
       <span class="font-bold px-4 pt-2">Namaste!</span>
       <span class="pt-2">A brief Introduction about Neeraj</span>
     </div>
 
-    <ng-container
-      *ngFor="let paragraph of descriptionParagraphs; let i = index"
-    >
-      <span
-        class="text-xl sm:text-2xl leading-relaxed"
-        [ngClass]="{ 'my-3': i === 1 }"
-        >{{ paragraph }}</span
-      >
-    </ng-container>
+    @for (paragraph of descriptionParagraphs; track $index; let i = $index) {
+    <span class="text-xl sm:text-2xl leading-relaxed" [ngClass]="{ 'my-3': i === 1 }">{{ paragraph }}</span>
+    }
   </div>
 </div>

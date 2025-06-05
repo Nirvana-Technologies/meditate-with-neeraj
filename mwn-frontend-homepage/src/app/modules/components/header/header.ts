@@ -1,23 +1,25 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { ScrollService } from '../../services/scroll.service';
 
 @Component({
   selector: 'app-header',
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
 export class Header {
   menuItems = [
-    { label: 'Home', link: '/home' },
-    { label: 'About Us', link: '/about-us' },
-    { label: 'Upcoming Seminars', link: '/upcoming-seminars' },
+    { label: 'Home', link: 'home' },
+    { label: 'About Us', link: 'aboutus' },
+    { label: 'Upcoming Seminars', link: 'upcomingseminars' },
   ];
 
   isMenuOpen = false;
   headerVisible = true;
   lastScrollTop = 0;
+
+  constructor(private scrollService: ScrollService) {}
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
@@ -34,5 +36,9 @@ export class Header {
       this.headerVisible = true;
     }
     this.lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+  }
+
+  scrollToId(id: string) {
+    this.scrollService.scrollToElementById(id);
   }
 }
