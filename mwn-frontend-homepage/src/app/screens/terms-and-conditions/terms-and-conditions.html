@@ -1,0 +1,25 @@
+<div class="my-28 md:my-40">
+  <h1 class="md:text-xl text-center font-medium text-green">
+    Terms and Conditions for MeditateWithNeeraj
+  </h1>
+
+  <div class="text-sm md:text-base md:mx-10 lg:mx-40 xl:mx-60 text-center mt-3 mb-16">
+    Welcome to MeditateWithNeeraj! These Terms and Conditions ("Terms") govern your use of the MeditateWithNeeraj mobile
+    application and its services. By accessing or using the app, you agree to comply with and be bound by these Terms.
+    If you do not agree with any part of these Terms, please do not use the app.
+  </div>
+
+  @for (item of termsAndConditions; track $index) {
+  <div class="md:mx-10 lg:mx-40 xl:mx-60 mt-5 lg:mt-10">
+    <div class="font-bold">
+      <span>{{ item?.id }}. </span> <span>{{ item?.label }}</span>
+    </div>
+    <div class="text-sm leading-7">{{ item?.desc }}</div>
+  </div>
+  }
+  <div class="md:mx-10 lg:mx-40 xl:mx-60 mt-5 lg:mt-10 leading-7 text-sm font-medium">
+    By using CKlassrooms, you acknowledge that you have read, understood, and
+    agree to be bound by these Terms. If you do not agree to these Terms, please
+    do not use CKlassrooms.
+  </div>
+</div>
