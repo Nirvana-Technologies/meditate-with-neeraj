@@ -1,1 +1,60 @@
-<h1>Home Works</h1>
+<div class="relative md:h-screen">
+  <picture>
+    <source srcset="/assets/heroMobileImage.svg" media="(max-width: 640px)" />
+    <img
+      src="/assets/hero.png"
+      alt="Hero background"
+      class="w-full md:absolute max-h-lvh md:inset-0 md:h-full md:w-full md:object-fill sm:object-cover"
+    />
+  </picture>
+
+  <!-- Desktop content -->
+  <div
+    class="absolute inset-0 hidden md:flex flex-col items-start justify-center ps-5 lg:!ps-30 md:max-w-3xl lg:max-w-5xl xl:max-w-[85rem]"
+  >
+    <span class="text-6xl font-bold">
+      Master your breath, Master your life
+    </span>
+    <span class="text-3xl font-medium my-3">Discover the power of breath</span>
+    <span class="text-2xl leading-relaxed">
+      Master Your Breath. Master Your Life. Discover the ancient science of Swar
+      Yoga, Pranayama, Asana, and Dhyana through practical, easy-to-follow
+      guidance. Our app empowers you to align breath, body, and mind—bringing
+      balance, clarity, and inner strength into your daily life. Whether you're
+      a beginner or a seeker deepening your practice, start your journey to
+      conscious living today.
+    </span>
+    <button
+      class="!border-2 border-[#3D6130] text-[#3D6130] !font-semibold !rounded-xl px-6 py-3 mt-5 text-lg w-auto transition-all duration-250 ease-[cubic-bezier(.645,.045,.355,1)] hover:shadow-[3px_3px_0_0_#355025] hover:translate-x-[-4px] hover:translate-y-[-4px]"
+    >
+      Join the next seminar
+    </button>
+  </div>
+</div>
+
+<!-- Mobile content -->
+<div class="md:hidden my-6 mx-6 space-y-4">
+  <button
+    class="w-full !bg-[#3D6130] text-white !rounded-xl px-6 py-3 text-lg transition-colors duration-300 hover:!bg-[#355025]"
+    aria-label="Join the next seminar"
+  >
+    Join the next seminar
+  </button>
+  <div class="text-base leading-relaxed mt-16">
+    <div class="text-4xl underline underline-offset-10 mb-7">
+      Discover the power of breath
+    </div>
+    <span class="text-xl leading-relaxed">
+      Master Your Breath. Master Your Life. Discover the ancient science of Swar
+      Yoga, Pranayama, Asana, and Dhyana through practical, easy-to-follow
+      guidance. Our app empowers you to align breath, body, and mind—bringing
+      balance, clarity, and inner strength into your daily life. Whether you're
+      a beginner or a seeker deepening your practice, start your journey to
+      conscious living today.
+    </span>
+  </div>
+</div>
+
+<app-about-us></app-about-us>
+<app-upcoming-seminars></app-upcoming-seminars>
+<app-why-choose-us></app-why-choose-us>

@@ -7,12 +7,14 @@ export const routes: Routes = [
     loadComponent: () => import('../app/screens/home/home').then((m) => m.Home),
   },
   {
-    path: 'contact',
+    path: 'upcoming-seminars',
     loadComponent: () =>
-      import('../app/screens/contact-us/contact-us').then((m) => m.ContactUs),
+      import('../app/screens/upcoming-seminars/upcoming-seminars').then(
+        (m) => m.UpcomingSeminars
+      ),
   },
   {
-    path: 'about',
+    path: 'about-us',
     loadComponent: () =>
       import('../app/screens/about-us/about-us').then((m) => m.AboutUs),
   },
