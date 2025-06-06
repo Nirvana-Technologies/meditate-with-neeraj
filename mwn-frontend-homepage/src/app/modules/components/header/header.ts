@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 import { ScrollService } from '../../services/scroll.service';
 
 @Component({
@@ -19,7 +20,7 @@ export class Header {
   headerVisible = true;
   lastScrollTop = 0;
 
-  constructor(private scrollService: ScrollService) {}
+  constructor(private router: Router, private scrollService: ScrollService) {}
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
@@ -39,6 +40,16 @@ export class Header {
   }
 
   scrollToId(id: string) {
-    this.scrollService.scrollToElementById(id);
+    this.isMenuOpen = false;
+
+    if (this.router.url !== '/home') {
+      this.router.navigate(['/home']).then(() => {
+        setTimeout(() => {
+          this.scrollService.scrollToElementById(id);
+        }, 50);
+      });
+    } else {
+      this.scrollService.scrollToElementById(id);
+    }
   }
 }
