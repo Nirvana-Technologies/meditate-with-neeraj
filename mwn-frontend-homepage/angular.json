@@ -30,6 +30,11 @@
                 "glob": "**/*",
                 "input": "src/assets",
                 "output": "/assets"
+              },
+              {
+                "glob": "robots.txt",
+                "input": "src/assets/crawlers",
+                "output": "./"
               }
             ],
             "styles": [
@@ -100,5 +105,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

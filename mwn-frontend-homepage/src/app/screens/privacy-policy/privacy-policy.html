@@ -1,0 +1,28 @@
+<div class="my-20 md:my-30 px-5 md:!px-10">
+  <span class="text-2xl md:!text-4xl font-medium">
+    Privacy policy for MeditateWithNeeraj
+  </span>
+
+  <div class="text-xl leading-6 sm:text-2xl mt-3 mb-16">
+    At MeditateWithNeeraj, we are committed to protecting your privacy. This
+    Privacy Policy explains how we collect, use, store, and share your personal
+    information when you use our mobile application and services. By using the
+    MeditateWithNeeraj app, you agree to the terms outlined in this policy.
+  </div>
+
+  @for (item of privacyPolicy; track $index) {
+  <div class="mt-5 lg:mt-10">
+    <div class="text-2xl md:!text-3xl font-medium mb-2">
+      <span>{{ item?.id }}. </span>
+      <span>{{ item?.label }}</span>
+    </div>
+    <div class="text-xl sm:text-2xl leading-6">{{ item?.desc }}</div>
+  </div>
+  }
+
+  <div class="mt-5 lg:mt-10 leading-6 text-xl sm:text-2xl">
+    By using MeditateWithNeeraj, you consent to the collection, use, and
+    disclosure of your information as described in this Privacy Policy. If you
+    do not agree to this Privacy Policy, please do not use MeditateWithNeeraj.
+  </div>
+</div>

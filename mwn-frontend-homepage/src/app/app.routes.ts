@@ -7,13 +7,17 @@ export const routes: Routes = [
     loadComponent: () => import('../app/screens/home/home').then((m) => m.Home),
   },
   {
-    path: 'contact',
+    path: 'terms',
     loadComponent: () =>
-      import('../app/screens/contact-us/contact-us').then((m) => m.ContactUs),
+      import('../app/screens/terms-and-conditions/terms-and-conditions').then(
+        (m) => m.TermsAndConditions
+      ),
   },
   {
-    path: 'about',
+    path: 'privacyPolicy',
     loadComponent: () =>
-      import('../app/screens/about-us/about-us').then((m) => m.AboutUs),
+      import('../app/screens/privacy-policy/privacy-policy').then(
+        (m) => m.PrivacyPolicy
+      ),
   },
 ];

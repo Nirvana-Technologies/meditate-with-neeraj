@@ -1,20 +1,96 @@
-<header>
-  <nav class="navbar section-content">
+<header
+  class="fixed top-0 w-full z-10 bg-white/10 backdrop-blur-lg shadow shadow-base transition-transform duration-300 ease-in-out"
+  [class.-translate-y-full]="!headerVisible"
+  [class.translate-y-0]="headerVisible"
+>
+  <nav
+    class="relative z-50 flex items-center justify-between py-2 px-6 sm:px-10"
+  >
     <a href="#" class="nav-logo">
-      <h2 class="logo-text">
-        <img src="assets/logo.svg">
-      </h2>
+      <img src="assets/logo.svg" alt="Logo" class="h-10" />
     </a>
-    <ul class="nav-menu">
-      <li class="nav-item">
-        <a href="#" class="nav-link">Home</a>
+
+    <button
+      (click)="toggleMenu()"
+      class="sm:hidden focus:outline-none"
+      aria-label="Toggle menu"
+      [attr.aria-expanded]="isMenuOpen"
+    >
+      @if (!isMenuOpen) {
+      <svg
+        class="w-6 h-6 text-black"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 8h16M4 16h16"
+        />
+      </svg>
+      } @else {
+      <svg
+        class="w-6 h-6 text-black"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"
+        />
+      </svg>
+      }
+    </button>
+
+    @if (isMenuOpen) {
+    <div
+      (click)="toggleMenu()"
+      class="fixed inset-0 z-40 bg-black bg-opacity-50 sm:hidden"
+    ></div>
+    }
+
+    <ul
+      class="fixed top-0 right-0 z-50 flex h-screen w-64 flex-col gap-4 bg-gray-100 px-6 py-4 transition-transform duration-300 ease-in-out sm:static sm:flex-row sm:h-auto sm:w-auto sm:translate-x-0 sm:bg-transparent"
+      [class.translate-x-full]="!isMenuOpen"
+      [class.translate-x-0]="isMenuOpen"
+    >
+      <li class="mb-4 flex justify-end sm:hidden">
+        <button
+          (click)="toggleMenu()"
+          class="focus:outline-none"
+          aria-label="Close menu"
+        >
+          <svg
+            class="w-6 h-6 text-black"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
       </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link">About Us</a>
+
+      @for (item of menuItems; track item) {
+      <li>
+        <a
+          (click)="scrollToId(item.link)"
+          class="block rounded px-2 py-1 text-black hover:font-semibold hover:text-[#2B5371] cursor-pointer"
+        >
+          {{ item.label }}
+        </a>
       </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link">Contact Us</a>
-      </li>
+      }
     </ul>
   </nav>
 </header>

@@ -1,10 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
 @use "./partials/colors" as *;
 @use "tailwindcss" as *;
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rasa:ital,wght@0,300..700;1,300..700&display=swap");
 
-/* 1. CSS Reset */
-*,
+:root {
+  --spacing: 4px;
+  --primary-color: $primary;
+  --secondary-color: $secondary;
+  --font-heading: "Rasa", sans-serif;
+  --font-body: "Poppins", sans-serif;
+}
+
 *::before,
 *::after {
   margin: 0;
@@ -12,27 +17,21 @@
   box-sizing: border-box;
 }
 
-/* 2. Set base font and smooth rendering */
-
 html {
   font-size: 62.5%;
+  height: 100%;
 }
 
-html,
 body {
   height: 100%;
-  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+  font-family: var(--font-body);
+  font-size: 1.6rem;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   background-color: #f9f9f9;
   color: #212121;
 }
 
-body {
-  font-size: 1.6rem;
-}
-
-/* 3. Media elements to scale */
 img,
 picture,
 video,
@@ -42,7 +41,6 @@ svg {
   max-width: 100%;
 }
 
-/* 4. Form elements inherit font */
 input,
 button,
 textarea,
@@ -51,31 +49,22 @@ select {
   border: none;
   background: none;
   outline: none;
+  font-family: var(--font-body);
 }
 
-/* 5. Anchor reset */
 a {
   color: inherit;
   text-decoration: none;
 }
 
-/* 6. List reset */
 ul,
 ol {
   list-style: none;
 }
 
-/* 7. Button default */
 button {
   cursor: pointer;
-}
-
-/* 8. Root variables (optional for theming) */
-:root {
-  --primary-color: $primary;
-  --secondary-color: $secondary;
-  --font-heading: "Rasa", sans-serif;
-  --font-body: "Poppins", sans-serif;
+  font-family: var(--font-body);
 }
 
 h1,
@@ -86,13 +75,4 @@ h5,
 h6 {
   font-family: var(--font-heading);
   font-weight: 600;
-}
-
-body,
-p,
-span,
-div,
-input,
-button {
-  font-family: var(--font-body);
 }
